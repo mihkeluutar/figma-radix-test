@@ -1,0 +1,53 @@
+/* Custom Radix Themes Overrides */
+
+/* You can override CSS variables to change the theme globally */
+:root {
+  /* Change default spacing */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  
+  /* Change default radius */
+  --radius-1: 2px;
+  --radius-2: 4px;
+  --radius-3: 6px;
+  
+  /* Add custom colors */
+  --custom-color: #ff6b6b;
+}
+
+/* Example: Custom button styles */
+.rt-Button.rt-variant-solid.rt-button.rt-variant-solid {
+  background: linear-gradient(135deg, var(--accent-9), var(--accent-11));
+  border: none;
+}
+
+.rt-Button.rt-variant-solid.rt-button.rt-variant-solid:hover {
+  background: linear-gradient(135deg, var(--accent-10), var(--accent-12));
+}
+
+/* Example: Custom card styles */
+.rt-Card.rt-Card {
+  border: 2px solid var(--gray-6);
+  transition: all 0.2s ease;
+}
+
+.rt-Card.rt-Card:hover {
+  border-color: var(--accent-9);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Example: Custom tabs */
+.rt-TabsTrigger[data-state="active"] {
+  background: var(--accent-3);
+  color: var(--accent-11);
+}
+
+/* Example: Custom dialog */
+.rt-DialogContent {
+  border: 2px solid var(--accent-9);
+}
+
+/* You can add any custom styling here */
+
