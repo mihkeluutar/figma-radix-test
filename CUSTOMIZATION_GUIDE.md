@@ -2,6 +2,16 @@
 
 This guide explains different ways to customize Radix UI components in your project.
 
+## Project Structure
+
+```
+src/ui/components/    # All Radix components (one file per component)
+src/themes/custom.css # Global CSS overrides
+src/main.jsx         # Theme configuration
+```
+
+Each Radix UI component is wrapped in `src/ui/components/` for easy customization.
+
 ## Approaches to Customization
 
 ### 1. CSS Overrides (Easiest)
@@ -31,15 +41,19 @@ Add global style overrides using CSS:
 - Less flexible than custom components
 - May need !important for specificity
 
-### 2. Custom Wrapper Components (Recommended)
+### 2. Edit Component Files (Recommended)
 
-**Files:** `src/components/CustomButton.jsx`, `src/components/CustomCard.jsx`
+**Location:** `src/ui/components/`
 
-Create your own components that wrap Radix UI:
+Each component is already wrapped for you. Just edit the files:
+
+**Examples:** `src/ui/components/Button.jsx`, `src/ui/components/Card.jsx`
+
+All Radix components are wrapped in individual files in the ui directory:
 
 ```jsx
-// src/components/CustomButton.jsx
-import { Button } from '@radix-ui/themes'
+// src/ui/components/Button.jsx
+import { Button as RadixButton } from '@radix-ui/themes'
 
 export function CustomButton({ children, ...props }) {
   return (
@@ -126,25 +140,26 @@ Customize the global theme:
 - `radius`: none, small, medium, large, full
 - `scaling`: 90%, 95%, 100%, 105%, 110%
 
-## Examples in This Project
+## Available Components
 
-### Custom Button
-See `src/components/CustomButton.jsx` for:
-- Basic button wrapper
-- Gradient button with hover effects
-- Custom styling examples
+All components are in `src/ui/components/`:
 
-### Custom Card
-See `src/components/CustomCard.jsx` for:
-- Card with hover animations
-- Glass morphism card
-- Custom interactive cards
+- `Button.jsx` - Button component
+- `Card.jsx` - Card component  
+- `Dialog.jsx` - Dialog component
+- `DropdownMenu.jsx` - Dropdown menu
+- `Tabs.jsx` - Tabs
+- `Accordion.jsx` - Accordion
+- `Popover.jsx` - Popover
+- `Tooltip.jsx` - Tooltip
+- `Switch.jsx` - Switch
+- `Slider.jsx` - Slider
 
-### Radix Primitives Examples
-See `src/components/ExamplePrimitiveUsage.jsx` for:
-- Fully custom dialog
-- Styled components with Radix Themes
-- Complete control examples
+### Example Customizations
+
+See `src/ui/components/CustomButton.jsx` for advanced examples.
+
+For Radix Primitives (unstyled) examples, check `src/ui/components/ExamplePrimitiveUsage.jsx`.
 
 ## Where to Find Component Code
 
@@ -158,9 +173,9 @@ See `src/components/ExamplePrimitiveUsage.jsx` for:
 - **Documentation**: https://www.radix-ui.com/primitives
 
 ### In Your Project
-The installed packages are in:
-- `node_modules/@radix-ui/themes` - Themes components
-- `node_modules/@radix-ui/react-*` - Primitives components
+- **Installed packages**: `node_modules/@radix-ui/themes` and `node_modules/@radix-ui/react-*`
+- **Your components**: `src/ui/components/` - Edit these to customize
+- **Global styles**: `src/themes/custom.css` - CSS overrides
 
 ## Best Practices
 
@@ -184,8 +199,8 @@ Radix Primitives (advanced)
 
 ## Need Help?
 
-- Check the example files in `src/components/`
-- Review Radix documentation
+- Check the component files in `src/ui/components/`
+- See `src/ui/README.md` for detailed documentation
 - Look at `src/themes/custom.css` for global overrides
 - Modify the Theme component in `src/main.jsx`
 

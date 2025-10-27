@@ -109,25 +109,42 @@ Available options:
 - `radius` - Border radius (none, small, medium, large, full)
 - `scaling` - Base size scaling (90%, 95%, 100%, 105%, 110%)
 
+## Project Structure
+
+```
+src/
+├── ui/
+│   ├── components/      # All Radix UI components (one file per component)
+│   │   ├── Button.jsx   # Edit to customize buttons
+│   │   ├── Card.jsx     # Edit to customize cards
+│   │   ├── Dialog.jsx   # Edit to customize dialogs
+│   │   └── index.js     # Central export point
+│   ├── lib/             # Utilities and helpers
+│   └── README.md        # UI directory documentation
+├── themes/
+│   └── custom.css       # Global CSS overrides
+└── App.jsx              # Main application
+```
+
 ## Customization
 
-### Customizing Radix Components
+### The `src/ui/components/` Directory
 
-The Radix UI components are installed as npm packages, but you have several ways to customize them:
+All Radix UI components are wrapped in individual files in `src/ui/components/`. This structure allows you to:
 
-1. **CSS Overrides** - See `src/themes/custom.css`
-2. **Custom Wrappers** - See `src/components/CustomButton.jsx` and `src/components/CustomCard.jsx`
-3. **Theme Configuration** - Modify the `Theme` component in `src/main.jsx`
-4. **Radix Primitives** - Use unstyled primitives for complete control
+- **Find components easily** - One file per component
+- **Customize without touching Radix source** - Edit your wrapper files
+- **Apply consistent styling** - All buttons look the same
+- **Swap implementations** - Change one component, affects entire app
 
-For detailed instructions, see `CUSTOMIZATION_GUIDE.md`.
+### How to Customize Components
 
-### Available Custom Components
+1. **Edit component files** - Open `src/ui/components/Button.jsx` and customize
+2. **Add global styles** - Edit `src/themes/custom.css`
+3. **Configure theme** - Modify the `Theme` component in `src/main.jsx`
+4. **Use primitives** - Import directly from `@radix-ui/react-*` for full control
 
-- `CustomButton` - Custom button with optional gradient variant
-- `CustomCard` - Interactive card with hover effects
-- `GlassCard` - Glass morphism card style
-- Example usage of Radix Primitives
+See `src/ui/README.md` for detailed instructions.
 
 ## Learn More
 
